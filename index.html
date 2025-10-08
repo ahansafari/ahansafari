@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آهن‌آلات صفری | حرفه‌ای‌ترین سایت</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Swiper.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- AOS.js -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<style>
+:root{
+  --color-primary:#1a237e;
+  --color-secondary:#1976d2;
+  --color-accent:#25d366;
+  --color-bg-light:#f5f5f7;
+  --color-bg-dark:#121212;
+  --color-card-light:#fff;
+  --color-card-dark:#1e1e1e;
+  --color-text-light:#333;
+  --color-text-dark:#eee;
+  --transition:.4s ease;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Vazirmatn',Tahoma,sans-serif; background: var(--color-bg-light); color: var(--color-text-light); line-height:1.6; scroll-behavior:smooth; transition: background var(--transition), color var(--transition);}
+a{text-decoration:none;}
+header{background: var(--color-primary); color:#fff; padding:20px 0; text-align:center; font-size:28px; font-weight:700; position:sticky; top:0; z-index:1000; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:background var(--transition);}
+body.dark header{background:#0d0d4d;}
+button{cursor:pointer;}
+
+/* Hero Section */
+.hero{position:relative;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:50px;}
+.hero::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(45deg, #1a237e, #1976d2, #25d366);background-size:400% 400%;animation:bgAnimate 15s ease infinite;opacity:.6;}
+@keyframes bgAnimate{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero h1{position:relative;color:#fff;font-size:36px;font-weight:700;text-align:center;animation:textAppear 2s ease forwards;opacity:0;}
+@keyframes textAppear{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+
+/* Container */
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+/* Swiper Slider */
+.swiper{padding-bottom:50px;}
+.swiper-slide{display:flex;justify-content:center;}
+.product-card{background: var(--color-card-light); border-radius:15px;width:280px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.1); transition:transform var(--transition), box-shadow var(--transition), background var(--transition);}
+body.dark .product-card{background: var(--color-card-dark);}
+.product-card:hover{transform:translateY(-12px) scale(1.03); box-shadow:0 14px 30px rgba(0,0,0,0.25);}
+.product-card img{width:100%;height:200px;object-fit:cover;transition:transform var(--transition);}
+.product-card img:hover{transform:scale(1.08);}
+.product-details{padding:15px;text-align:center;}
+.product-name{font-size:22px;font-weight:700;color: var(--color-primary);transition: color var(--transition);}
+body.dark .product-name{color:#90caf9;}
+.product-price{font-size:16px;color:#d32f2f;transition: color var(--transition);}
+body.dark .product-price{color:#ef9a9a;}
+
+/* Call to Action */
+.call-to-action{margin:50px 0;background:#e3f2fd;padding:35px;border-radius:15px;display:flex;flex-direction:column;gap:20px;align-items:center;transition: background var(--transition);}
+body.dark .call-to-action{background:#1e1e1e;}
+.section-title{font-size:26px;font-weight:700;color: var(--color-secondary); margin-bottom:20px; text-align:center; transition: color var(--transition);}
+body.dark .section-title{color:#90caf9;}
+.contact-item{display:flex;align-items:center;justify-content:center;font-size:16px;flex-wrap:wrap;gap:15px;transition:transform var(--transition);}
+.contact-item:hover{transform:scale(1.02);}
+.contact-item a{padding:10px 18px;border-radius:12px;color:#fff;font-weight:700;display:inline-flex;align-items:center;gap:6px;transition:background var(--transition);}
+.call-btn{background: var(--color-secondary);}
+.call-btn:hover{background:#0d47a1;}
+.whatsapp-btn{background: var(--color-accent);}
+.whatsapp-btn:hover{background:#1ebe57;}
+.address{font-size:16px;color: var(--color-text-light);text-align:center;margin-top:20px;transition:color var(--transition);}
+body.dark .address{color: var(--color-text-dark);}
+.address a{color: var(--color-primary);transition:color var(--transition);}
+body.dark .address a{color:#90caf9;}
+
+/* Footer */
+footer{background: var(--color-primary);color:#fff;padding:25px 0;text-align:center;border-radius:0 0 15px 15px;font-weight:500;transition:background var(--transition);}
+body.dark footer{background:#0d0d4d;}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle{position:fixed;bottom:20px;right:20px;background: var(--color-secondary);color:#fff;border:none;padding:12px 16px;border-radius:50px;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:background var(--transition);z-index:10000;}
+.dark-mode-toggle:hover{background:#0d47a1;}
+
+/* Responsive */
+@media(max-width:768px){.contact-item{flex-direction:column;align-items:center;}.contact-item a{width:100%;justify-content:center;}.product-card{width:90%;}.hero h1{font-size:28px;}}
+</style>
+</head>
+<body>
+
+<header>آهن‌آلات صفری</header>
+
+<!-- Hero Section -->
+<section class="hero"><h1>بهترین محصولات آهن‌آلات با کیفیت جهانی</h1></section>
+
+<div class="container">
+
+  <!-- Swiper Slider -->
+  <div class="swiper mySwiper" data-aos="fade-up" data-aos-duration="1200">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="product-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Angle_steel_2001.jpg/320px-Angle_steel_2001.jpg" alt="نبشی">
+          <div class="product-details"><div class="product-name">نبشی</div><div class="product-price">قیمت: تماس بگیرید</div></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="product-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Iron_rod.jpg/320px-Iron_rod.jpg" alt="تیرآهن">
+          <div class="product-details"><div class="product-name">تیرآهن</div><div class="product-price">قیمت: تماس بگیرید</div></div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="product-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Steel_beam.jpg/320px-Steel_beam.jpg" alt="میلگرد">
+          <div class="product-details"><div class="product-name">میلگرد</div><div class="product-price">قیمت: تماس بگیرید</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="call-to-action" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+    <div class="section-title">تماس با ما</div>
+    <div class="contact-item">
+      <span>تلفن ثابت: 02146075680</span>
+      <a href="tel:+982146075680" class="call-btn"><i class="fas fa-phone"></i> تماس</a>
+    </div>
+    <div class="contact-item">
+      <span>تلفن ثابت: 02146075609</span>
+      <a href="tel:+982146075609" class="call-btn"><i class="fas fa-phone"></i> تماس</a>
+    </div>
+    <div class="contact-item">
+      <span>موبایل (واتساپ): 09122525982</span>
+      <a href="https://wa.me/989122525982" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> واتساپ</a>
+    </div>
+    <div class="address">
+      آدرس: تهران-شهر قدس-خیابان ٣٠ متری شورا (سی متری پایین) ٣٠٠ متر پایین‌تر از شهرداری منطقه ٢ پلاک ١۴۴ آهن‌آلات صفری
+      <br><a href="https://www.google.com/maps/search/%D8%A2%D9%87%D9%86+%D8%A2%D9%84%D8%A7%D8%AA+%D8%A8%D8%B1%D8%A7%D8%AF%D8%B1%D8%A7%D9%86+%D8%B5%D9%81%D8%B1%DB%8C" target="_blank">مشاهده در گوگل مپ</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2025 آهن صفری | همه حقوق محفوظ است.</footer>
+
+<!-- Dark Mode Toggle -->
+<button class="dark-mode-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i> حالت تاریک</button>
+
+<script>
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  pagination: { el: ".swiper-pagination", clickable: true },
+  navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  breakpoints: { 640: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+});
+AOS.init();
+
+function toggleDarkMode(){
+  document.body.classList.toggle('dark');
+}
+</script>
+
+</body>
+</html>
